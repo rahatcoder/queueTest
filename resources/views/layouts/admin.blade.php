@@ -69,13 +69,13 @@
 						Admin Panel
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="/pages-profile">
+						<a class="sidebar-link" href="{{url('dashboard')}}">
 							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="/pages-profile">
+						<a class="sidebar-link" href="{{url('dashboard/allUsers')}}">
 							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
 						</a>
 					</li>
@@ -262,6 +262,26 @@
 					</ul>
 				</div>
 			</nav>
+			<section>
+				<!-- <div class="container">
+					<div class="row">
+						<div class="col-md-1"></div>
+						<div class="col-md-10">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="bread" style="display:inline;">
+										<ul>
+											<li><a href="#">>> Home</a></li>
+											<li><a href="#">>> Dashboard</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-1"></div>
+					</div>
+				</div> -->
+			</section>
 			<section>
 				<div class="container">
 					<div class="row">

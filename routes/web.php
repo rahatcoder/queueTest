@@ -36,14 +36,14 @@ Route::get('dashboard', [AdminController::class, 'index']);
 
 // User part Routes Starts
 Route::get('dashboard/allUsers', [UserController::class, 'index']);
-Route::get('dashboard/user/addUsers', [UserController::class, 'add']);
-Route::get('dashboard/user/editUsers/{slug}', [UserController::class, 'edit']);
-Route::get('dashboard/user/viewUsers/{slug}', [UserController::class, 'view']);
-Route::post('dashboard/user/submit', [UserController::class, 'insert']);
+Route::get('dashboard/user/addUsers', [UserController::class, 'create']);
+Route::get('dashboard/user/editUsers', [UserController::class, 'edit']);
+Route::get('dashboard/user/viewUsers', [UserController::class, 'view']);
+Route::post('dashboard/user/submit', [UserController::class, 'store']);
 Route::post('dashboard/user/update', [UserController::class, 'update']);
 Route::post('dashboard/user/softdelete', [UserController::class, 'softdelete']);
 Route::post('dashboard/user/restore', [UserController::class, 'restore']);
-Route::post('dashboard/user/delete', [UserController::class, 'delete']);
+Route::post('dashboard/user/delete', [UserController::class, 'destroy']);
 // User part Routes Ends
 
 // Admission part Routes Starts
