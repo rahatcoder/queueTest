@@ -34,7 +34,7 @@
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="/">
 					<span class="sidebar-brand-text align-middle">
-						Queue || Ashfaq
+						<u>Project || Queue</u>
 						<!-- <sup><small class="badge bg-primary text-uppercase">Pro</small></sup> -->
 					</span>
 					<svg class="sidebar-brand-icon align-middle" width="32px" height="32px" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter" color="#FFFFFF" style="margin-left: -3px">
@@ -282,7 +282,7 @@
 					</div>
 				</div> -->
 			</section>
-			<section>
+			<!-- <section>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-1"></div>
@@ -293,16 +293,16 @@
 
 					</div>
 				</div>
-			</section>
+			</section> -->
 			@yield('page')
 
-			<footer class="footer">
+			<footer class="footer" style="margin-top: auto;">
 				<div class="container-fluid">
 					<div class="row text-muted">
-						<div class="col-6 text-start">
+						<div class="col-9 text-start">
 							<p class="mb-0">
 								<a href="#" target="_blank" class="text-muted"><strong>Ashfaq Ahmed</strong></a> ©
-							</p>
+							This is PHP Laravel CRUD with queue, events and listener <b>demo</b></p>
 						</div>
 				</div>
 			</footer>
