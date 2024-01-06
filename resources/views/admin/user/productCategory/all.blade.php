@@ -13,7 +13,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-2" style="margin-left:30px" ;>
                 <ul>
-                    <li class="btn btn-dark dbtn" ;><a href="user/addUsers">ADD USER</a></li>
+                    <li class="btn btn-dark dbtn" ;><a href="productsCategory/add">Add Category</a></li>
                 </ul>
                 <div class="col-md-1"></div>
             </div>
@@ -28,17 +28,17 @@
                     <thead class="th">
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">User Name</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Remarks</th>
                             <th scope="col">Manage</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($users as $data)
+                        @foreach($productsCategory as $data)
                         <tr>
-                            <th scope="row">{{$data->id}}</th>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->email}}</td>
+                            <th scope="row">{{$data->procate_id}}</th>
+                            <td>{{$data->procate_name}}</td>
+                            <td>{{$data->procate_remarks}}</td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -46,9 +46,11 @@
                                     </button>
                                     <ul class="dropdown-menu drtdwn" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item"
-                                                href="{{url('dashboard/user/viewUsers/' . $data->id)}}">Show</a></li>
+                                                href="{{url('dashboard/productsCategory/view/' . $data->procate_id)}}">Show</a>
+                                        </li>
                                         <li><a class="dropdown-item"
-                                                href="{{url('dashboard/user/editUsers/' . $data->id)}}">Modify</a></li>
+                                                href="{{url('dashboard/productsCategory/edit/' . $data->procate_id)}}">Modify</a>
+                                        </li>
                                         <li><a class="dropdown-item" href="#">Destroy</a></li>
                                     </ul>
                                 </div>

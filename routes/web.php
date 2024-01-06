@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\productsCategory;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,15 +47,27 @@ Route::post('dashboard/user/restore', [UserController::class, 'restore']);
 Route::post('dashboard/user/delete', [UserController::class, 'destroy']);
 // User part Routes Ends
 
-// Admission part Routes Starts
-Route::get('dashboard/products', [AdmissionController::class, 'index']);
-Route::get('dashboard/productsCatagory/procate', [AdmissionController::class, 'create']);
-Route::get('dashboard/productsCatagory/editprocate/{slug}', [AdmissionController::class, 'edit']);
-Route::get('dashboard/productsCatagory/viewprocate/{slug}', [AdmissionController::class, 'view']);
-Route::post('dashboard/productsCatagory/submit', [AdmissionController::class, 'store']);
-Route::post('dashboard/productsCatagory/update', [AdmissionController::class, 'update']);
-Route::post('dashboard/productsCatagory/softdelete', [AdmissionController::class, 'softdelete']);
-Route::post('dashboard/productsCatagory/restore', [AdmissionController::class, 'restore']);
-Route::post('dashboard/productsCatagory/delete', [AdmissionController::class, 'distroy']);
-// Admission part Routes Ends
+// Product Category part Routes Starts
+Route::get('dashboard/productsCategory', [productsCategory::class, 'index']);
+Route::get('dashboard/productsCategory/add', [productsCategory::class, 'create']);
+Route::get('dashboard/productsCategory/edit/{id}', [productsCategory::class, 'edit']);
+Route::get('dashboard/productsCategory/view/{id}', [productsCategory::class, 'view']);
+Route::post('dashboard/productsCategory/submit', [productsCategory::class, 'store']);
+Route::post('dashboard/productsCategory/update', [productsCategory::class, 'modify']);
+Route::post('dashboard/productsCategory/softdelete', [productsCategory::class, 'softdelete']);
+Route::post('dashboard/productsCategory/restore', [productsCategory::class, 'restore']);
+Route::post('dashboard/productsCategory/delete', [productsCategory::class, 'distroy']);
+// Product Category part Routes Ends
+
+// Product part Routes Starts
+Route::get('dashboard/products', [productsCategory::class, 'index']);
+Route::get('dashboard/products/add', [productsCategory::class, 'create']);
+Route::get('dashboard/products/edit/{id}', [productsCategory::class, 'edit']);
+Route::get('dashboard/products/view/{id}', [productsCategory::class, 'view']);
+Route::post('dashboard/products/submit', [productsCategory::class, 'store']);
+Route::post('dashboard/products/update', [productsCategory::class, 'update']);
+Route::post('dashboard/products/softdelete', [productsCategory::class, 'softdelete']);
+Route::post('dashboard/products/restore', [productsCategory::class, 'restore']);
+Route::post('dashboard/products/delete', [productsCategory::class, 'distroy']);
+// Product part Routes Ends
 require __DIR__.'/auth.php';

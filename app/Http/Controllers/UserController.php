@@ -44,6 +44,7 @@ class UserController extends Controller
             'name'=>$request['username'],
             'email'=>$request['email'],
             'password'=>Hash::make($request['password']),
+            'created_at'=>Carbon::now()->toDateTimeString(),
         ]);
     }
 
@@ -70,9 +71,9 @@ class UserController extends Controller
         $update=User::where('id',$id)->update([
             'name'=>$request['username'],
             'email'=>$request['email'],
+            'updated_at'=>Carbon::now()->toDateTimeString(),
         ]);
-        
-        
+       
         if($update){
             return redirect()->back();
         }

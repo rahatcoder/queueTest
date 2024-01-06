@@ -26,13 +26,13 @@
             <div class="col-md-10">
                 <table class="table table-dark table-striped table-hover custom_view_table">
                     <tr>
-                        <td>UserName</td>
+                        <td>Name</td>
                         <td>:</td>
-                        <td>{{$vue->name}}</td>
+                        <td>{{$vue->procate_name}}</td>
                     </tr>
-                    <td>Email</td>
+                    <td>Remarks</td>
                     <td>:</td>
-                    <td>{{$vue->email}}</td>
+                    <td>{{$vue->procate_remarks}}</td>
                     </tr>
                 </table>
             </div>
