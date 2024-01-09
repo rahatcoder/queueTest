@@ -45,10 +45,15 @@ class productsCategory extends Controller
             $insert=ProductCategory::insertGetId([
                 'procate_name'=>$request['name'],
                 'procate_remarks'=>$request['remarks'],
-                'expcate_creator'=>$creator,
                 'created_at'=>Carbon::now()->toDateTimeString(),
             ])
         ]);
+
+        if($insert){
+            return redirect()->back();
+        }else{
+            return ('Opration Failed...');
+        }
 
     }
 
@@ -58,7 +63,9 @@ class productsCategory extends Controller
     }
 
     public function modify(Request $request){
-        $id=$request['procate_id'];
+        
+        $id=$request->id;
+
         $this->validate($request,[
             'name'=>'required',
             'remarks'=>'required',
@@ -68,11 +75,10 @@ class productsCategory extends Controller
         ]);
 
         $editor=Auth::user()->id;
-                  
+
         $update=ProductCategory::where('procate_id',$id)->update([
             'procate_name'=>$request['name'],
             'procate_remarks'=>$request['remarks'],
-            'procate_editor'=>$editor,
             'updated_at'=>Carbon::now()->toDateTimeString(),
         ]);
 
