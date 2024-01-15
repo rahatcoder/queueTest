@@ -35,19 +35,22 @@ class productsCategory extends Controller
     }
 
     public function store(Request $request){
-        $this->validate($request,[
-            'name'=>'required',
-            'remarks'=>'required',
-        ],[
-            'name.required'=>'Please enter product category name',
-            'remarks.required'=>'Please provide product category remarks',
+        // $this->validate($request,[
+        //     'name'=>'required',
+        //     'remarks'=>'required',
+        // ],[
+        //     'name.required'=>'Please enter product category name',
+        //     'remarks.required'=>'Please provide product category remarks',
             
-            $insert=ProductCategory::insertGetId([
-                'procate_name'=>$request['name'],
-                'procate_remarks'=>$request['remarks'],
-                'created_at'=>Carbon::now()->toDateTimeString(),
-            ])
-        ]);
+            // $insert=ProductCategory::insertGetId([
+            //     'procate_name'=>$request['name'],
+            //     'procate_remarks'=>$request['remarks'],
+            //     'created_at'=>Carbon::now()->toDateTimeString(),
+            // ])
+        //]);
+
+        $data=$request->all();
+        $insert=ProductCategory::create($data);
 
         if($insert){
             return redirect()->back();

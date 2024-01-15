@@ -114,7 +114,7 @@
                                     href="{{url('dashboard/productsCategory')}}">Product
                                     Category</a>
                             </li>
-                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Products Details</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="{{url('dashboard/products')}}">Products</a></li>
                             <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
                         </ul>
                     </li>
