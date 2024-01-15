@@ -71,4 +71,8 @@ Route::post('dashboard/products/softdelete', [products::class, 'softdelete']);
 Route::post('dashboard/products/restore', [products::class, 'restore']);
 Route::post('dashboard/products/delete', [products::class, 'distroy']);
 // Product part Routes Ends
+
+//Email routes starts
+Route::post('dashboard/email'), [email::class,'email']);
+//Email routes end
 require __DIR__.'/auth.php';

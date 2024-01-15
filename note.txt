@@ -1,0 +1,13 @@
+for Queue 
+
+1st from Terminal 
+
+php artisan make:mail SendEmail
+
+Modify 	Subject 
+	for view 'emails.test' 
+	-- 	create folder mail or any name 
+		create file test or any name
+
+	
+	
