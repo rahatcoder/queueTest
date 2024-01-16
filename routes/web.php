@@ -4,8 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\productsCategory;
-use App\Http\Controllers\products;
+use App\Http\Controllers\productsCategoryController;
+use App\Http\Controllers\productsController;
+use App\Http\Controllers\SummaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,30 +50,34 @@ Route::post('dashboard/user/delete', [UserController::class, 'destroy']);
 // User part Routes Ends
 
 // Product Category part Routes Starts
-Route::get('dashboard/productsCategory', [productsCategory::class, 'index']);
-Route::get('dashboard/productsCategory/add', [productsCategory::class, 'create']);
-Route::get('dashboard/productsCategory/edit/{id}', [productsCategory::class, 'edit']);
-Route::get('dashboard/productsCategory/view/{id}', [productsCategory::class, 'view']);
-Route::post('dashboard/productsCategory/submit', [productsCategory::class, 'store']);
-Route::post('dashboard/productsCategory/update', [productsCategory::class, 'modify']);
-Route::post('dashboard/productsCategory/softdelete', [productsCategory::class, 'softdelete']);
-Route::post('dashboard/productsCategory/restore', [productsCategory::class, 'restore']);
-Route::post('dashboard/productsCategory/delete', [productsCategory::class, 'distroy']);
+Route::get('dashboard/productsCategory', [ProductsCategoryController::class, 'index']);
+Route::get('dashboard/productsCategory/add', [ProductsCategoryController::class, 'create']);
+Route::get('dashboard/productsCategory/edit/{id}', [ProductsCategoryController::class, 'edit']);
+Route::get('dashboard/productsCategory/view/{id}', [ProductsCategoryController::class, 'view']);
+Route::post('dashboard/productsCategory/submit', [ProductsCategoryController::class, 'store']);
+Route::post('dashboard/productsCategory/update', [ProductsCategoryController::class, 'modify']);
+Route::post('dashboard/productsCategory/softdelete', [ProductsCategoryController::class, 'softdelete']);
+Route::post('dashboard/productsCategory/restore', [ProductsCategoryController::class, 'restore']);
+Route::post('dashboard/productsCategory/delete', [ProductsCategoryController::class, 'distroy']);
 // Product Category part Routes Ends
 
 // Product part Routes Starts
-Route::get('dashboard/products', [products::class, 'index']);
-Route::get('dashboard/products/add', [products::class, 'create']);
-Route::get('dashboard/products/edit/{id}', [products::class, 'edit']);
-Route::get('dashboard/products/view/{id}', [products::class, 'view']);
-Route::post('dashboard/products/submit', [products::class, 'store']);
-Route::post('dashboard/products/update', [products::class, 'update']);
-Route::post('dashboard/products/softdelete', [products::class, 'softdelete']);
-Route::post('dashboard/products/restore', [products::class, 'restore']);
-Route::post('dashboard/products/delete', [products::class, 'distroy']);
+Route::get('dashboard/products', [ProductsController::class, 'index']);
+Route::get('dashboard/products/add', [ProductsController::class, 'create']);
+Route::get('dashboard/products/edit/{id}', [ProductsController::class, 'edit']);
+Route::get('dashboard/products/view/{id}', [ProductsController::class, 'view']);
+Route::post('dashboard/products/submit', [ProductsController::class, 'store']);
+Route::post('dashboard/products/update', [ProductsController::class, 'update']);
+Route::post('dashboard/products/softdelete', [ProductsController::class, 'softdelete']);
+Route::post('dashboard/products/restore', [ProductsController::class, 'restore']);
+Route::post('dashboard/products/delete', [ProductsController::class, 'distroy']);
 // Product part Routes Ends
 
+//Summary part route start
+// Route::get('dashboard/summary', [SummaryController::class, 'index']);
+Route::resource('summary', SummaryController::class);
+//Summary part route end
 //Email routes starts
-Route::post('dashboard/email'), [email::class,'email']);
+// Route::post('dashboard/email', [email::class,'email']);
 //Email routes end
 require __DIR__.'/auth.php';

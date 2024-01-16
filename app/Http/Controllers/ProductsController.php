@@ -16,7 +16,7 @@ use Carbon\Carbon;
 use Validator;
 
 
-class products extends Controller
+class ProductsController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');

@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Validator;
 
-class productsCategory extends Controller
+class productsCategoryController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');

@@ -55,7 +55,7 @@
                 <div class="sidebar-user">
                     <div class="d-flex justify-content-center">
                         <div class="flex-shrink-0">
-                            <img src="{{asset('contents/admin')}}/resources/img/avatars/avatar.avif"
+                            <img src="{{asset('contents/admin')}}/resources/img/avatars/avatarR.jpg"
                                 class="avatar img-fluid rounded me-1" alt="Ashfaq Ahmed">
                         </div>
                         <div class="flex-grow-1 ps-2">
@@ -293,7 +293,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-icon pe-md-0 dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                                <img src="{{asset('contents/admin')}}/resources/img/avatars/avatar.avif"
+                                <img src="{{asset('contents/admin')}}/resources/img/avatars/avatarR.jpg"
                                     class="avatar img-fluid rounded" alt="Ashfaq Ahmed">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end drtdwn">
