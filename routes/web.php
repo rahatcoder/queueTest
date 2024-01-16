@@ -7,6 +7,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\productsCategoryController;
 use App\Http\Controllers\productsController;
 use App\Http\Controllers\SummaryController;
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\ArchiveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +80,21 @@ Route::post('dashboard/products/delete', [ProductsController::class, 'distroy'])
 // Route::get('dashboard/summary', [SummaryController::class, 'index']);
 Route::resource('summary', SummaryController::class);
 //Summary part route end
+
+//Sales part route start
+// Route::get('dashboard/summary', [SummaryController::class, 'index']);
+Route::resource('sales', SalesController::class);
+//Sales part route end
+
+//Purchase part route start
+// Route::get('dashboard/summary', [SummaryController::class, 'index']);
+Route::resource('purchase', PurchaseController::class);
+//Purchase part route end
+
+//Archive part route start
+// Route::get('dashboard/summary', [SummaryController::class, 'index']);
+Route::resource('archive', ArchiveController::class);
+//Archive part route end
 //Email routes starts
 // Route::post('dashboard/email', [email::class,'email']);
 //Email routes end
