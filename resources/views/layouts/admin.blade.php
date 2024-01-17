@@ -118,6 +118,62 @@
                             <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
                         </ul>
                     </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#purchase" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Purchase</span>
+                        </a>
+                        <ul id="purchase" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Purchase
+                                    Details</a>
+                            </li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#sales" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Sales</span>
+                        </a>
+                        <ul id="sales" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Sales
+                                    Details</a>
+                            </li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#summary" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Accounts</span>
+                        </a>
+                        <ul id="summary" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Accounts
+                                    Details</a>
+                            </li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#archive" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Archive</span>
+                        </a>
+                        <ul id="archive" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Archive
+                                    Details</a>
+                            </li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </nav>
