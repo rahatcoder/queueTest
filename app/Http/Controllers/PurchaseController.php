@@ -13,7 +13,7 @@ class PurchaseController extends Controller
     public function index()
     {
         $purchase=Purchase::all();
-        return view('all', compact('purchase'));
+        return view('admin.user.purchase.all', compact('purchase'));
     }
 
     /**
