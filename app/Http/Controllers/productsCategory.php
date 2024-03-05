@@ -34,22 +34,32 @@ class productsCategory extends Controller
         return view('admin.user.productCategory.view', compact('vue'));
     }
 
-    public function store(Request $request){
-        $this->validate($request,[
-            'name'=>'required',
-            'remarks'=>'required',
-        ],[
-            'name.required'=>'Please enter product category name',
-            'remarks.required'=>'Please provide product category remarks',
-            
-            $insert=ProductCategory::insertGetId([
-                'procate_name'=>$request['name'],
-                'procate_remarks'=>$request['remarks'],
-                'expcate_creator'=>$creator,
-                'created_at'=>Carbon::now()->toDateTimeString(),
-            ])
+    public function store(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'remarks' => 'required',
+        ], [
+            'name.required' => 'Please enter product category name',
+            'remarks.required' => 'Please provide product category remarks',
         ]);
-
+    
+        // Assuming $creator is defined somewhere in your code
+        $creator = auth()->user()->id; // Example: You might get the creator from the authenticated user
+        
+        $insert = ProductCategory::insertGetId([
+            'procate_name' => $request->input('name'),
+            'procate_remarks' => $request->input('remarks'),
+            'expcate_creator' => $creator,
+            'created_at' => Carbon::now()->toDateTimeString(),
+        ]);
+        
+        if($insert) {
+            // Success
+            return redirect()->back()->with('success', 'Product category added successfully');
+        } else {
+            // Failure
+            return redirect()->back()->with('error', 'Failed to add product category');
+        }
     }
 
     public function edit($id){
@@ -58,26 +68,32 @@ class productsCategory extends Controller
     }
 
     public function modify(Request $request){
-        $id=$request['procate_id'];
+        $id = $request->input('procate_id');
+        // $id=$request['procate_id'];
+    
         $this->validate($request,[
-            'name'=>'required',
-            'remarks'=>'required',
+            'name' => 'required',
+            'remarks' => 'required',
         ],[
-            'name.required'=>'Please enter product category name',
-            'remarks.required'=>'Please provide product category remarks',
+            'name.required' => 'Please enter product category name',
+            'remarks.required' => 'Please provide product category remarks',
+        ]);
+    
+        $editor = Auth::user()->id;
+    
+        $update = ProductCategory::where('procate_id', $id)->update([
+            'procate_name' => $request->input('name'),
+            'procate_remarks' => $request->input('remarks'),
+            'procate_editor' => $editor,
+            'updated_at' => Carbon::now()->toDateTimeString(),
         ]);
 
-        $editor=Auth::user()->id;
-                  
-        $update=ProductCategory::where('procate_id',$id)->update([
-            'procate_name'=>$request['name'],
-            'procate_remarks'=>$request['remarks'],
-            'procate_editor'=>$editor,
-            'updated_at'=>Carbon::now()->toDateTimeString(),
-        ]);
-
+        dd($update);
+    
         if($update){
-            return redirect()->back();
+            return redirect()->back()->with('success', 'Product category modified successfully');
+        } else {
+            return redirect()->back()->with('error', 'Failed to modify product category');
         }
     }
 

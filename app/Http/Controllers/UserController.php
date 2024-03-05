@@ -73,7 +73,9 @@ class UserController extends Controller
             'email'=>$request['email'],
             'updated_at'=>Carbon::now()->toDateTimeString(),
         ]);
-       
+
+        dd($update);
+               
         if($update){
             return redirect()->back();
         }
