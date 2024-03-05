@@ -7,13 +7,13 @@
             <div class="col-md-1"></div>
             <div class="col-md-7">
                 <div class="row">
-                    <h3>All Product Category</h3>
+                    <h3>All Products</h3>
                 </div>
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-2" style="margin-left:30px" ;>
                 <ul>
-                    <li class="btn btn-dark dbtn" ;><a href="productsCategory/add">Add Category</a></li>
+                    <li class="btn btn-dark dbtn" ;><a href="products/add">Add Products</a></li>
                 </ul>
                 <div class="col-md-1"></div>
             </div>
@@ -29,16 +29,18 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Remarks</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Amount</th>
                             <th scope="col">Manage</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($productsCategory as $data)
+                        @foreach($products as $data)
                         <tr>
-                            <th scope="row">{{$data->procate_id}}</th>
-                            <td>{{$data->procate_name}}</td>
-                            <td>{{$data->procate_remarks}}</td>
+                            <th scope="row">{{$data->products_id}}</th>
+                            <td>{{$data->products_title}}</td>
+                            <td>{{$data->products_category}}</td>
+                            <td>{{$data->products_amount}}</td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -46,10 +48,10 @@
                                     </button>
                                     <ul class="dropdown-menu drtdwn" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item"
-                                                href="{{url('dashboard/productsCategory/view/' . $data->procate_id)}}">Show</a>
+                                                href="{{url('dashboard/products/view/' . $data->procate_id)}}">Show</a>
                                         </li>
                                         <li><a class="dropdown-item"
-                                                href="{{url('dashboard/productsCategory/edit/' . $data->procate_id)}}">Modify</a>
+                                                href="{{url('dashboard/products/edit/' . $data->procate_id)}}">Modify</a>
                                         </li>
                                         <li><a class="dropdown-item" href="#">Destroy</a></li>
                                     </ul>
@@ -58,6 +60,7 @@
                         </tr>
                         @endforeach
                     </tbody>
+
 
                 </table>
             </div>

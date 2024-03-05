@@ -55,7 +55,7 @@
                 <div class="sidebar-user">
                     <div class="d-flex justify-content-center">
                         <div class="flex-shrink-0">
-                            <img src="{{asset('contents/admin')}}/resources/img/avatars/avatar.avif"
+                            <img src="{{asset('contents/admin')}}/resources/img/avatars/avatarR.jpg"
                                 class="avatar img-fluid rounded me-1" alt="Ashfaq Ahmed">
                         </div>
                         <div class="flex-grow-1 ps-2">
@@ -114,7 +114,63 @@
                                     href="{{url('dashboard/productsCategory')}}">Product
                                     Category</a>
                             </li>
-                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Products Details</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="{{url('dashboard/products')}}">Products</a></li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#purchase" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Purchase</span>
+                        </a>
+                        <ul id="purchase" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Purchase
+                                    Details</a>
+                            </li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#sales" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Sales</span>
+                        </a>
+                        <ul id="sales" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Sales
+                                    Details</a>
+                            </li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#summary" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Accounts</span>
+                        </a>
+                        <ul id="summary" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Accounts
+                                    Details</a>
+                            </li>
+                            <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a data-bs-target="#archive" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="check-square"></i> <span
+                                class="align-middle">Archive</span>
+                        </a>
+                        <ul id="archive" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item active"><a class="sidebar-link"
+                                    href="{{url('dashboard/productsCategory')}}">Archive
+                                    Details</a>
+                            </li>
                             <li class="sidebar-item active"><a class="sidebar-link" href="/">Analytics</a></li>
                         </ul>
                     </li>
@@ -293,7 +349,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-icon pe-md-0 dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                                <img src="{{asset('contents/admin')}}/resources/img/avatars/avatar.avif"
+                                <img src="{{asset('contents/admin')}}/resources/img/avatars/avatarR.jpg"
                                     class="avatar img-fluid rounded" alt="Ashfaq Ahmed">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end drtdwn">

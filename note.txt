@@ -1,0 +1,44 @@
+for Queue 
+
+1st from Terminal 
+
+php artisan make:mail SendEmail
+
+Modify 	Subject 
+	for view 'emails.test' 
+	-- 	create folder mail or any name 
+		create file test or any name
+
+	user name ahmed@ashfaq.demo.softghor.com
+	softghor email pass VGiK&+*X$u9S
+
+
+database name -- demosoftghor_Ashfaq
+user name -- demosoftghor_ashfaq
+password -- $K0S,kH.(@CZ
+
+
+htaccess 
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+

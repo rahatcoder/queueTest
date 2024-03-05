@@ -14,7 +14,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Validator;
 
-class productsCategory extends Controller
+class productsCategoryController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
@@ -34,6 +34,7 @@ class productsCategory extends Controller
         return view('admin.user.productCategory.view', compact('vue'));
     }
 
+<<<<<<< HEAD:app/Http/Controllers/productsCategory.php
     public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required',
@@ -60,6 +61,32 @@ class productsCategory extends Controller
             // Failure
             return redirect()->back()->with('error', 'Failed to add product category');
         }
+=======
+    public function store(Request $request){
+        // $this->validate($request,[
+        //     'name'=>'required',
+        //     'remarks'=>'required',
+        // ],[
+        //     'name.required'=>'Please enter product category name',
+        //     'remarks.required'=>'Please provide product category remarks',
+            
+            // $insert=ProductCategory::insertGetId([
+            //     'procate_name'=>$request['name'],
+            //     'procate_remarks'=>$request['remarks'],
+            //     'created_at'=>Carbon::now()->toDateTimeString(),
+            // ])
+        //]);
+
+        $data=$request->all();
+        $insert=ProductCategory::create($data);
+
+        if($insert){
+            return redirect()->back();
+        }else{
+            return ('Opration Failed...');
+        }
+
+>>>>>>> 7990b09f377357c83618332df8b85f651833c919:app/Http/Controllers/ProductsCategoryController.php
     }
 
     public function edit($id){
@@ -68,13 +95,20 @@ class productsCategory extends Controller
     }
 
     public function modify(Request $request){
+<<<<<<< HEAD:app/Http/Controllers/productsCategory.php
         $id = $request->input('procate_id');
         // $id=$request['procate_id'];
     
+=======
+        
+        $id=$request->id;
+
+>>>>>>> 7990b09f377357c83618332df8b85f651833c919:app/Http/Controllers/ProductsCategoryController.php
         $this->validate($request,[
             'name' => 'required',
             'remarks' => 'required',
         ],[
+<<<<<<< HEAD:app/Http/Controllers/productsCategory.php
             'name.required' => 'Please enter product category name',
             'remarks.required' => 'Please provide product category remarks',
         ]);
@@ -86,6 +120,18 @@ class productsCategory extends Controller
             'procate_remarks' => $request->input('remarks'),
             'procate_editor' => $editor,
             'updated_at' => Carbon::now()->toDateTimeString(),
+=======
+            'name.required'=>'Please enter product category name',
+            'remarks.required'=>'Please provide product category remarks',
+        ]);
+
+        $editor=Auth::user()->id;
+
+        $update=ProductCategory::where('procate_id',$id)->update([
+            'procate_name'=>$request['name'],
+            'procate_remarks'=>$request['remarks'],
+            'updated_at'=>Carbon::now()->toDateTimeString(),
+>>>>>>> 7990b09f377357c83618332df8b85f651833c919:app/Http/Controllers/ProductsCategoryController.php
         ]);
 
         dd($update);
